@@ -1,0 +1,126 @@
+@import "framework/Rules";
+@import "framework/animate.scss";
+
+$mainColor  : var(--blue);
+$mainFont :'Roboto', sans-serif;
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: all .5s linear;
+}
+
+.h-50{
+  height: 50vh !important;
+}
+
+button {
+    background-color: transparent;
+    border : 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    @include minScreen(xs){
+      .container {
+        width: 88%;
+      }
+    }
+}
+
+.overlay {
+  background-color: rgba(0,0,0,.6);
+}
+
+
+
+$font-Family:'Raleway', sans-serif;
+h1,h2,h3,h4,p {
+  font-family:$font-Family;
+  padding: 0;
+  margin: 0;
+}
+
+p{
+  text-transform: capitalize;
+  line-height:2;
+  font-size: 15px;
+  margin: 8px 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+.p-head {
+  padding: 3.5em 0;
+}
+
+.parent {
+  position: relative;
+}
+
+
+
+
+
+.head {
+  h2 {
+    letter-spacing: 4px;
+    font-weight: normal;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    strong {
+      font-weight: 600;
+      font-size: 37px;
+    }
+  }
+  p {
+    text-transform: capitalize;
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    max-width: 70%;
+    margin: auto;
+  }
+}
+
+
+form {
+  p {
+    font-size: 11px !important;
+    text-transform: capitalize;
+    color: #777 !important;
+    line-height: 1.2px !important;
+    margin: 13px 0px;
+    margin-bottom: 15px;
+  }
+  input.error,
+  textarea.error {
+    background: #c3133b69;
+  }
+
+  input.valid,
+  textarea.valid {  
+    background-color: #E8F0FE; 
+  }
+  p.error {
+    color: #c3133b69;
+  }
+
+  p.valid {  
+    color: #E8F0FE; 
+  }
+}
+
+
+
+
+
+
+
