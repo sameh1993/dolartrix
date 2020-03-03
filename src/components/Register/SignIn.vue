@@ -31,7 +31,7 @@
                   @blur="$v.signIn.password.$touch()"
                   type="password"
                   placeholder="password"
-                  :class=" {'valid': !$v.signIn.email.$invalid, 'error': $v.signIn.email.$error }"
+                  :class=" {'valid': !$v.signIn.password.$invalid, 'error': $v.signIn.password.$error }"
                 />
                 <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                 <p v-if="!$v.signIn.password.required">the field dont must be empty</p>
@@ -61,7 +61,7 @@
 <style lang="scss" scoped>
 @import "../../assets/css/style.css";
 .signin {
-  background-color: #ccc;
+  background-color: #f3f3f3;
   .content-w3ls {
     margin: auto;
     justify-content: center;
@@ -89,6 +89,9 @@
         color: #fff;
       }
     }
+    .field-icon {
+      margin-right:9px;
+    }
   }
   .footer {
     router-link {
@@ -104,6 +107,8 @@
 
 <script>
 import { required, email } from "vuelidate/lib/validators";
+
+import axios from 'axios'
 
 import jQuery from "jquery";
 const $ = jQuery;
@@ -144,6 +149,15 @@ export default {
           } else {
               $("#password").attr("type", "password");
           }
+      })
+
+      axios("https://identitytoolkit.googleapis.com/v1/accounts:resetPassword?key=AIzaSyA3JF6zLZfqLjK1-24yWukGe2HVbSFmtT4", {
+        "requestType":"PASSWORD_RESET","email":"samehsayed628@gmail.com"
+      }).then(res => {
+        console.log(res)
+      })
+      .catch(error => {
+        console.log(error.response);
       })
   }
 };

@@ -3,12 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "vue-cli-service serve --watch",
+    "build": "vue-cli-service build --watch",
     "lint": "vue-cli-service lint --fix"
   },
   "dependencies": {
+    "@firebase/analytics": "^0.2.13",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
     "core-js": "^3.4.4",
+    "firebase": "^7.8.2",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.1",
     "vue": "^2.6.10",

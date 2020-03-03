@@ -49,9 +49,18 @@ export default new Vuex.Store({
           localStorage.setItem('userId', res.data.localId)
           localStorage.setItem('expirationDate', expirationDate)
           dispatch('storeUser', authData)
-          dispatch('setLogoutTimer', res.data.expiresIn)
+          alert("the register is Done")
+          router.replace("/");
+          // dispatch('setLogoutTimer', res.data.expiresIn)
         })
-        .catch(error => console.log(error.response))
+        .catch(error => {
+          console.log(error.response)
+          console.log(error.response.data.error.message)
+          let yourMsg = error.response.data.error.message;
+          if(yourMsg === 'EMAIL_EXISTS') {
+            alert("This email is Already Registered")
+          }
+        })
     },
     signin ({commit, dispatch}, authData) {
       axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyA3JF6zLZfqLjK1-24yWukGe2HVbSFmtT4', {
@@ -60,7 +69,7 @@ export default new Vuex.Store({
         returnSecureToken: true
       }) 
         .then(res => {
-          console.log(res)
+          // console.log(res)
           const now = new Date()
           const expirationDate = new Date(now.getTime() + res.data.expiresIn * 1000)
           localStorage.setItem('token', res.data.idToken)
@@ -71,12 +80,16 @@ export default new Vuex.Store({
             userId: res.data.localId
           })
           dispatch('setLogoutTimer', res.data.expiresIn)
+          router.replace("/")
         })
         .catch(error => {
-          console.log(error.response)
+          // console.log(error.response.data.error.message)
+          let myError = error.response.data.error.message;
           // let myError = error.response.data.error
           if (error.response.status === 404) {
             alert("this email is not found")
+          } else if  (myError === 'INVALID_PASSWORD' || myError === "EMAIL_NOT_FOUND") {
+            alert("please, enter a valid Email or Password")
           }
         })
     },
@@ -101,7 +114,8 @@ export default new Vuex.Store({
       localStorage.removeItem('expirationDate')
       localStorage.removeItem('token')
       localStorage.removeItem('userId')
-      router.replace('/signin')
+      router.replace('/register/signin');
+      console.log("clear")
     },
     storeUser ({state}, userData) {
       if (!state.idToken) {
@@ -139,6 +153,9 @@ export default new Vuex.Store({
     },
     isAuthenticated (state) {
       return state.idToken !== null
+    },
+    idToken(state){
+      return state.idToken;
     }
   }
 })

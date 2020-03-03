@@ -1,5 +1,6 @@
 @import "framework/Rules";
 @import "framework/animate.scss";
+@import "framework/animatainVue.scss";
 
 $mainColor  : var(--blue);
 $mainFont :'Roboto', sans-serif;
@@ -37,7 +38,10 @@ body {
   background-color: rgba(0,0,0,.6);
 }
 
-
+.container {
+  max-width: 87% !important;
+  width:87% !important
+}
 
 $font-Family:'Raleway', sans-serif;
 h1,h2,h3,h4,p {
@@ -95,7 +99,7 @@ form {
   p {
     font-size: 11px !important;
     text-transform: capitalize;
-    color: #777 !important;
+    color: #c1c1c1 !important;
     line-height: 1.2px !important;
     margin: 13px 0px;
     margin-bottom: 15px;

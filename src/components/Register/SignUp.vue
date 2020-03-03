@@ -85,7 +85,7 @@
 @import "../../assets/css/style.css";
 
 .signup {
-  background:#f5f5f5;
+  background:#f3f3f3;
   .fa-fw {
     margin-right: 8px;
   }
@@ -106,6 +106,13 @@
     .field-group {
       display: block;
     }
+    input[type='submit']{
+      font-weight:600;
+      letter-spacing: 2px;
+      &:hover {
+        color: #fff !important;
+      }
+    }
     h2 {
       padding: 10px 0;
     }
@@ -121,6 +128,7 @@
       background: #ff4f81;
       color: #fff;
     }
+
   }
 }
 

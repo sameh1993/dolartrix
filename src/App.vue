@@ -10,7 +10,7 @@
           <router-link class="navbar-brand" to="/">
             <i class="fa fa-line-chart fa-1x"></i>
             Domand
-          </router-link> 
+          </router-link>
           <button
             class="navbar-toggler"
             type="button"
@@ -20,7 +20,7 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span class="fa fa-bars"></span>
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -40,12 +40,20 @@
                 <router-link to="/blog" class="nav-link" active-class="active">Blog</router-link>
               </button>
 
-              <button class="nav-item" @click="view='Contact' ">
+              <button class="nav-item mb-2" @click="view='Contact' ">
                 <router-link to="/contact" class="nav-link" active-class="active">Contact</router-link>
               </button>
 
               <div class="custom">
-                <router-link to="/register" class="btn btn-primary">Git started</router-link>
+                <button v-if="!idToken" class="btn btn-primary">
+                  <router-link to="/register">Git started</router-link>
+                </button>
+                <button v-if="idToken" class="btn btn-primary">
+                  <router-link to="/dashboard">Dashboard</router-link>
+                </button>
+                <button v-if="idToken" @click="clearLogin" class="btn btn-primary ml-2">
+                  <router-link to="/">Logout</router-link>
+                </button>
               </div>
             </ul>
           </div>
@@ -68,7 +76,6 @@
           </ol>
 
           <div class="carousel-inner">
-
             <div class="carousel-item active">
               <div class="container">
                 <div class="parent row">
@@ -119,10 +126,8 @@
                 </div>
               </div>
             </div>
-            
           </div>
 
-          
           <a
             class="carousel-control-prev"
             href="#carouselExampleIndicators"
@@ -156,11 +161,11 @@
     </header>
     <!--end header -->
 
-   <transition name="fade">
+    <transition name="fade">
       <!-- start content  ---->
-    <router-view></router-view>
-    <!--- end content --->
-   </transition>
+      <router-view></router-view>
+      <!--- end content --->
+    </transition>
 
     <!--- start footer -->
     <footers />
@@ -169,6 +174,8 @@
 </template>
 
 <style lang="scss">
+@import "./assets/css/style-loadingpage.css";
+
 @media (max-width: 576px) {
   .container {
     max-width: auto !important;
@@ -186,6 +193,16 @@ header {
     font-size: 32px;
     color: #fff !important;
   }
+  @include maxScreen(md) {
+    .navbar-nav {
+      background-color: rgba(0, 0, 0, 0.7);
+      text-align: center;
+      padding: 10px 0;
+      .nav-item:hover {
+        background-color:rgba(0,0,0,.9);
+      }
+    }
+  }
   .overlay {
     background: rgba(0, 0, 0, 0.5);
     position: absolute;
@@ -194,6 +211,12 @@ header {
     right: 0;
     left: 0;
     z-index: 3;
+  }
+  .navbar-toggler {
+    border: 1px solid #ccc;
+    span {
+      color: #333;
+    }
   }
   .navbar {
     padding: 10px 0;
@@ -209,7 +232,6 @@ header {
     .navbar-toggler {
       @include minScreen(xs) {
         border: 1px solid #ccc;
-        background-color: #f9f9f9;
         span {
           color: #fff;
         }
@@ -221,34 +243,31 @@ header {
       color: #fff;
       .nav-link {
         color: #fff;
-        margin: 0 8px;
+        margin: 0 5px;
         font-size: 18px;
         &.active,
         &:hover {
           color: var(--blue);
         }
-        @include minScreen(xs) {
-          background-color: #fff;
-          border-radius: 35px;
-          border: 1px solid #fff;
-          margin-top: 5px;
-          color: #333;
-          font-weight: 600;
-          letter-spacing: 2px;
-          &:hover {
-            background: var(--blue);
-            color: #fff;
-          }
-        }
       }
     }
-    .custom .btn {
-      padding: 10px 28px;
-      background-color: rgba(#fff, 0.2);
-      color: #fff;
-      text-transform: capitalize;
-      font-weight: 600;
-      border: 1px solid #ccc;
+    .custom {
+      .btn {
+        padding: 7px 18px;
+        background-color: rgba(#fff, 0.2);
+        color: #fff;
+        text-transform: capitalize;
+        font-weight: 600;
+        border: 1px solid #ccc;
+        transition: all 0.3s linear;
+        &:hover {
+         background-color: $mainColor;
+        }
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
     }
   }
   .carousel {
@@ -256,7 +275,6 @@ header {
     .overlay {
       height: 100%;
       color: #fff;
-
       .carousel-inner {
         height: 100%;
         .carousel-item {
@@ -321,6 +339,8 @@ header {
     left: 0;
     right: 0;
     z-index: 8;
+    text-transform: capitalize;
+    letter-spacing: 1px;
     .row {
       margin: 0;
       padding: 10px 0;
@@ -329,13 +349,36 @@ header {
       padding: 0 10px;
       font-size: 18px;
       font-weight: 600;
+      &:last-child {
+        color: $mainColor;
+      }
     }
   }
+}
+.fa-angle-up {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  width: 37px;
+  height: 37px;
+  background-color: $mainColor;
+  font-weight: 600;
+  line-height: 37px !important;
+  z-index: 30;
+  text-align: center;
+  font-size: 24px !important;
+  color: #fff;
 }
 </style>
 
 <script>
 import footers from "./components/Footer.vue";
+
+import jquery from "jquery";
+const $ = jquery;
+window.$ = $;
+
+// import fb from "./firebaseInit";
 
 export default {
   name: "App",
@@ -343,11 +386,47 @@ export default {
   components: {
     footers
   },
-  mounted: function() {},
+  mounted() {
+    // to keep login
+    this.$store.dispatch("tryAutoLogin");
+
+    // to show and hiddeb scroll angle
+    $(".fa-angle-up").fadeOut(700);
+    $(window).scroll(function() {
+      if ($("html, body").scrollTop() >= 120) {
+        $(".fa-angle-up").fadeIn(700);
+      } else {
+        $(".fa-angle-up").fadeOut(700);
+      }
+    });
+
+    $(window).resize(function() {
+      console.log($(window).width());
+    });
+
+    $(".custom .btn, .nav-item").click(function() {
+      $(".navbar-collapse").removeClass("show");
+    });
+  },
   data() {
     return {
       view: "home"
     };
+  },
+  computed: {
+    idToken() {
+      return this.$store.getters.idToken;
+    }
+  },
+  methods: {
+    clearLogin() {
+      return this.$store.dispatch("logout");
+    }
+  },
+  beforeMount() {
+    // $(".loadingPage").delay(1400).fadeOut(1200, function () {
+    //   $(this).remove();
+    // })
   }
 };
 </script>

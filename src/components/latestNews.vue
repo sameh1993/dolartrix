@@ -9,7 +9,7 @@
       </div>
       <div class="row">
         <div
-          class="content col-md-6 col-sm-12 col-xs-12 mt-4"
+          class="content col-lg-6 col-sm-12 col-xs-12 mt-4"
           v-for="(item, index) in blogItems"
           :key="index - 1"
         >

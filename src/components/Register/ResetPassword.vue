@@ -61,7 +61,7 @@
 <style lang="scss" scoped>
 @import "../../assets/css/style.css";
 .signin {
-  background-color: #ccc;
+  background-color: #f3f3f3;
   .content-w3ls {
     margin: auto;
     justify-content: center;

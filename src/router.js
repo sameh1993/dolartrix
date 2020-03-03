@@ -5,11 +5,15 @@ import AboutUs from "./views/About";
 import Serivces from "./views/Serivces";
 import Blog from "./views/Blog";
 import ContactUs from "./views/contactUs";
+import Dashboard from "./views/Dashboard.vue";
+
 
 import Registeration from "./views/Registeration.vue";
 /* ============================== */
 import SignUp from "./components/Register/SignUp.vue";
 import SignIn from "./components/Register/SignIn.vue";
+
+
 
 Vue.use(Router);
 
@@ -24,12 +28,12 @@ export default new Router({
     },
     {
       path: "/aboutUs",
-      name: "aboutUs",
+      name: "ِِِِِِِِِِِAbout Us",
       component: AboutUs
     },
     {
       path: "/serives",
-      name: "serives",
+      name: "serivces",
       component: Serivces
     },
     {
@@ -44,13 +48,16 @@ export default new Router({
     },
     {
       path:"/register",
-      name: "registeration",
       component:  Registeration,
       children: [
         {path: "", name:"Sign Up",  component: SignUp},
         {path: "signin", name:"Sign In", component: SignIn}
       ]
-      
+    },
+    {
+      path: "/dashboard",
+      name:"Dashboard",
+      component: Dashboard
     }
   ]
 });

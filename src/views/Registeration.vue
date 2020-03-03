@@ -1,6 +1,8 @@
 <template>
     <div class="main-registe">
-        <router-view></router-view>
+        <transition name="fade">
+            <router-view></router-view>
+        </transition>
     </div>
 </template>
 
@@ -9,6 +11,6 @@ import jquery from "jquery";
 const $ = jquery;
 window.$ = $;
 export default { 
-    
+     
 }
 </script> 
