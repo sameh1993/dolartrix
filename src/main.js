@@ -10,6 +10,9 @@ Vue.config.productionTip = false;
 // include font-awesome
 import "../node_modules/font-awesome/css/font-awesome.min.css";
 
+// import vue minified
+import "./../node_modules/vue/dist/vue.runtime.common.prod";
+
 
 
 // include jquery

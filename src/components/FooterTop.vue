@@ -40,6 +40,8 @@
             text-transform: capitalize;
             letter-spacing: 2px;
             font-weight: 500;
+            font-size: 18px;
+            margin-top:3px;
         }
         p{
             padding: 0 3px;

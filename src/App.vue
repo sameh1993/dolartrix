@@ -12,7 +12,7 @@
             Domand
           </router-link>
           <button
-            class="navbar-toggler"
+            class="navbar-toggler" 
             type="button"
             data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -40,7 +40,7 @@
                 <router-link to="/blog" class="nav-link" active-class="active">Blog</router-link>
               </button>
 
-              <button class="nav-item mb-2" @click="view='Contact' ">
+              <button class="nav-item" @click="view='Contact' ">
                 <router-link to="/contact" class="nav-link" active-class="active">Contact</router-link>
               </button>
 
@@ -174,7 +174,6 @@
 </template>
 
 <style lang="scss">
-@import "./assets/css/style-loadingpage.css";
 
 @media (max-width: 576px) {
   .container {
@@ -183,6 +182,7 @@
 }
 
 @import "./GlobalRules/scss/mainRules.scss";
+@import "./assets/spinner.css";
 header {
   position: relative;
   height: 100vh;
@@ -244,7 +244,7 @@ header {
       .nav-link {
         color: #fff;
         margin: 0 5px;
-        font-size: 18px;
+        font-size: 15px;
         &.active,
         &:hover {
           color: var(--blue);
@@ -369,6 +369,16 @@ header {
   font-size: 24px !important;
   color: #fff;
 }
+.fixed {
+  position:fixed;
+  top:0; left:0;
+  right: 0; bottom:0;
+  background-color: #007BFF;
+  z-index:12;
+  display:flex;
+  justify-content: center;
+  align-items: center;  
+}
 </style>
 
 <script>
@@ -424,9 +434,9 @@ export default {
     }
   },
   beforeMount() {
-    // $(".loadingPage").delay(1400).fadeOut(1200, function () {
-    //   $(this).remove();
-    // })
+    $(".fixed").fadeOut(700, function () {
+      $(this).remove();
+    })
   }
 };
 </script>
