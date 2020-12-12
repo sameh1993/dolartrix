@@ -75,6 +75,9 @@
     font-weight: 600;
     letter-spacing: 2px;
   }
+  .nav-link {
+    color: #222 !important;
+  }
   .navbar-toggler {
     width: 47px;
     height: 32px;
