@@ -1,53 +1,28 @@
 <template>
-  <div class="about">
+    <div class="">
 
-    <!-- start About us -->
-      <AboutUs @sameh="getData()" />
-    <!-- end About  us -->
+     <!-- start about section -->
+    <aboutComp />
+    <!-- end about section -->
 
+    <!-- start about us -->
+    <about-us />
+    <!-- end about us --->
 
-    <!-- start customer feedback -->
-    <customerFeed v-on:sharing="getData = $event" />
-    <!-- end customer feedback -->
-
-    {{name}}
-
-    <!--start team prof -->
-    <teamProf />
-    <!-- end team prof -->
-
-    <!--- start news letter -->
-      <NewsLetter />
-    <!--- end news letter -->
-
-
-  </div>
+    <!-- start our team -->
+    <our-team></our-team>
+    </div>
 </template>
 
-
 <script>
-import AboutUs from "../components/AboutUs.vue";
-import customerFeed from "../components/Customer.vue";
-import teamProf from "../components/TeamProf.vue";
-import NewsLetter from "../components/NewsLetter.vue";
-
-
+import aboutComp from "../components/content/about";
+import aboutUs from "../components/content/aboutUs";
+import ourTeam from "../components/content/our-team";
 export default {
-  data(){
-    return {
-      name: [],
+    components:{
+        aboutComp,
+        aboutUs,
+        ourTeam,
     }
-  },
-  methods: {
-    getData : function (newVal) {
-      return this.name = newVal;
-    }
-  },
-  components: {
-    AboutUs,
-    customerFeed,
-    teamProf,
-    NewsLetter
-  }
 }
 </script>

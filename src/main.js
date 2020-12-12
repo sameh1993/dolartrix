@@ -25,8 +25,6 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 // include customsation
 import "./GlobalRules/scss/mainRules.scss";
 
-import axios from "axios";
-Vue.use(axios);
 
 
 // include vuelidate

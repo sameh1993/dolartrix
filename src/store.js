@@ -10,7 +10,13 @@ export default new Vuex.Store({
   state: {
     idToken: null,
     userId: null,
-    user: null
+    user: null,
+    Msgs: {
+      Registered: "Congratulation, the registeration is Done",
+      dontFind: "please, enter a valid Email or Password",
+      emailExist: "This email is Already Registered"
+    },
+    currentMsg: "sameh"
   },
   mutations: {
     authUser (state, userData) {
@@ -23,6 +29,9 @@ export default new Vuex.Store({
     clearAuthData (state) {
       state.idToken = null
       state.userId = null
+    },
+    currentMsg(state, msg) {
+      state.currentMsg = msg
     }
   },
   actions: {
@@ -31,7 +40,7 @@ export default new Vuex.Store({
         commit('clearAuthData')
       }, expirationTime * 1000)
     },
-    signup ({commit, dispatch}, authData) {
+    signup ({state, commit, dispatch}, authData) {
       axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyA3JF6zLZfqLjK1-24yWukGe2HVbSFmtT4', {
         email: authData.email,
         password: authData.password,
@@ -49,7 +58,8 @@ export default new Vuex.Store({
           localStorage.setItem('userId', res.data.localId)
           localStorage.setItem('expirationDate', expirationDate)
           dispatch('storeUser', authData)
-          alert("the register is Done")
+          // commit("currentMsg", state.Msgs.Registered)
+          alert("Congratulation, the registeration is Done")
           router.replace("/");
           // dispatch('setLogoutTimer', res.data.expiresIn)
         })
@@ -58,18 +68,17 @@ export default new Vuex.Store({
           console.log(error.response.data.error.message)
           let yourMsg = error.response.data.error.message;
           if(yourMsg === 'EMAIL_EXISTS') {
-            alert("This email is Already Registered")
+            commit("currentMsg", state.Msgs.emailExist)
           }
         })
     },
-    signin ({commit, dispatch}, authData) {
+    signin ({state, commit, dispatch}, authData) {
       axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyA3JF6zLZfqLjK1-24yWukGe2HVbSFmtT4', {
         email: authData.email,
         password: authData.password,
         returnSecureToken: true
       }) 
         .then(res => {
-          // console.log(res)
           const now = new Date()
           const expirationDate = new Date(now.getTime() + res.data.expiresIn * 1000)
           localStorage.setItem('token', res.data.idToken)
@@ -79,17 +88,17 @@ export default new Vuex.Store({
             token: res.data.idToken,
             userId: res.data.localId
           })
+          console.log(res)
           dispatch('setLogoutTimer', res.data.expiresIn)
           router.replace("/")
+          commit("currentMsg", state.Msgs.Registered)
         })
         .catch(error => {
-          // console.log(error.response.data.error.message)
+          
           let myError = error.response.data.error.message;
-          // let myError = error.response.data.error
-          if (error.response.status === 404) {
-            alert("this email is not found")
-          } else if  (myError === 'INVALID_PASSWORD' || myError === "EMAIL_NOT_FOUND") {
-            alert("please, enter a valid Email or Password")
+          console.log(myError)
+          if (myError === 'INVALID_PASSWORD' || myError === "EMAIL_NOT_FOUND") {
+            commit("currentMsg" , state.Msgs.dontFind)
           }
         })
     },
@@ -156,6 +165,8 @@ export default new Vuex.Store({
     },
     idToken(state){
       return state.idToken;
-    }
+    },
+    
+
   }
 })

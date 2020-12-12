@@ -14,10 +14,6 @@
       }
     } @else if (min-width: 1200px) {
       @content;
-    } @else if $pram == downSm {
-      @media (min-width: 767px) {
-        @content;
-      }
     }
   }
 
@@ -32,7 +28,9 @@
       @content;
     }
   } @else if $pram == lg {
-    @content;
+    @media (max-width: 1200px) {
+      @content;
+    }
   } @else if $pram == downSm {
     @media (max-width: 767px) {
       @content;

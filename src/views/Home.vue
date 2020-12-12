@@ -1,64 +1,57 @@
 <template>
   <div class="home">
-    <!--- start BannerButton -->
-    <BannerButtom />
-    <!--- end BannerButton --->
+    <!-- start about section -->
+    <aboutSec />
+    <!-- end about section -->
 
-    
+    <!-- start about us -->
+    <about-us />
+    <!-- end about us --->
 
-    <!--- start About Us -->
-    <AboutUs @Advant="passData"/>
-    <!-- end About -->
+    <!-- start serivces -->
+    <serivces id="serivces" />
+    <!-- end serivces -->
 
-    <!-- start Information -->
-    <information />
-    <!-- end Information -->
+    <!-- start features -->
+    <feature-comp />
+    <!-- start features -->
 
-    <!-- start marketProduct --->
-    <Product />
-    <!-- end marketProduct --->
+    <Questions />
 
-  
+    <!-- start pricing plans -->
+    <pricing-plans></pricing-plans>
+    <!-- end pricing plans -->
 
-    <!-- start Statistical -->
-    <Statistical />
-    <!-- end Statistical -->
+    <!-- start our team -->
+    <our-team></our-team>
+    <!-- end our team -->
 
-    <!-- start footer top -->
-    <footerTop />
-    <!-- end footer top -->
+    <!-- start our partners -->
+    <our-partners></our-partners>
+    <!-- end our partners -->
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import BannerButtom from "../components/BannerButtom.vue";
-import AboutUs from "../components/AboutUs.vue";
-import Information from "../components/Information.vue";
-import Product from "../components/MarketingProduct.vue";
-import Statistical from "../components/Statistical.vue";
-import FooterTop from "../components/FooterTop.vue";
+import aboutSec from "../components/content/about";
+import aboutUs from "../components/content/aboutUs";
+import serivces from "../components/content/serivces";
+import featureComp from "../components/content/features";
+import Questions from "../components/content/questions";
+import pricingPlans from "../components/content/pricing-plans";
+import ourTeam from "../components/content/our-team";
+import ourPartners from "../components/content/our-partners";
 
 export default {
-  data: function() {
-    return {
-      ShareAdvant: [],
-      sharIcon: ""
-    };
-  },
-  methods: {
-    // this is funtion receive sharing data in shareAdvant
-    passData: function(newVal) {
-      this.ShareAdvant = newVal;
-    }
-  },
   components: {
-    BannerButtom,
-    AboutUs,
-    Information,
-    Product,
-    Statistical,
-    FooterTop
-  }
+    aboutSec,
+    aboutUs,
+    featureComp,
+    serivces,
+    Questions,
+    pricingPlans,
+    ourTeam,
+    ourPartners
+  },
 };
 </script>
