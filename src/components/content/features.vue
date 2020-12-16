@@ -1,43 +1,30 @@
 <template>
   <div class="feature">
     <div class="container">
+    <!-- start header section -->
       <div class="head text-center">
-        <h5 class="text-uppercase">our features</h5>
-        <h3 class="text-capitalize">why choose us</h3>
+        <h5 class="text-uppercase"> {{featureSec.subTitle}} </h5>
+        <h3 class="text-capitalize"> {{featureSec.title}} </h3>
         <p class="lead">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis
-          accumsan nisi Ut ut felis congue nisl hendrerit commodo.
+          {{featureSec.para}}
         </p>
       </div>
+
+      <!-- start content section -->
       <div class="row">
-        <div class="shadow part col-md-6 col-lg-4 mt-4">
-          <img src="../../assets/img/icons/corporate/1.svg" />
-          <h4>Go Live in Minutes</h4>
+
+        <div v-for="(item, index) in featureSec.content" :key="index" class="shadow part col-md-6 col-lg-4 mt-4">
+          <img :src="item.imgUrl" />
+          <h4> {{item.title}} </h4>
           <p>
-            Lorem ipsum dolor sit amet, adipiscing elit. Nulla neque quam, maxi
-            ut ac cu msan ut, posuere sit Lorem ipsum qu.
-          </p>
-        </div>
-        <div class="shadow part col-md-6 col-lg-4 mt-4">
-          <img src="../../assets/img/icons/corporate/2.svg" />
-          <h4>Go Live in Minutes</h4>
-          <p>
-            Lorem ipsum dolor sit amet, adipiscing elit. Nulla neque quam, maxi
-            ut ac cu msan ut, posuere sit Lorem ipsum qu.
+            {{item.para}}
           </p>
         </div>
 
-        <div class="shadow part col-md-6 col-lg-4 mt-4">
-          <img src="../../assets/img/icons/corporate/3.svg" />
-          <h4>Go Live in Minutes</h4>
-          <p>
-            Lorem ipsum dolor sit amet, adipiscing elit. Nulla neque quam, maxi
-            ut ac cu msan ut, posuere sit Lorem ipsum qu.
-          </p>
-        </div>
       </div>
 
       <div class="row feat-column">
+
         <div class="col-md-6 col-sm-12 col-xs-12">
           <div class="shadow mt-2">
             <span> 1 </span>
@@ -50,7 +37,7 @@
             </div>
           </div>
 
-          <div class="shadow mt-2">
+          <div class="shadow mt-3">
             <span> 2 </span>
             <div class="info">
               <h3>Register / Login To Our Platform</h3>
@@ -61,7 +48,7 @@
             </div>
           </div>
 
-          <div class="shadow mt-2">
+          <div class="shadow mt-3">
             <span> 3 </span>
             <div class="info">
               <h3>Register / Login To Our Platform</h3>
@@ -82,6 +69,42 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data(){
+    return {
+      featureSec: {
+        subTitle: "our features",
+        title: "Why Choose Us",
+        para:
+          "Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Quis Accumsan Nisi Ut Ut Felis Congue Nisl Hendrerit Commodo.",
+        content: [
+          {
+            imgUrl: require('../../assets/img/icons/corporate/1.svg'),
+            title: "Technica Support",
+            para:
+              "Lorem Ipsum Dolor Sit Amet, Conse Ctetur Dolor Adipisicing Elit Ipsum Dolor Sit Amet.",
+          },
+          {
+            imgUrl: require('../../assets/img/icons/corporate/2.svg'),
+            title: "Technica Support",
+            para:
+              "Lorem Ipsum Dolor Sit Amet, Conse Ctetur Dolor Adipisicing Elit Ipsum Dolor Sit Amet.",
+          },
+          {
+            imgUrl: require('../../assets/img/icons/corporate/3.svg'),
+            title: "Marketing Base",
+            para:
+              "Lorem Ipsum Dolor Sit Amet, Conse Ctetur Dolor Adipisicing Elit Ipsum Dolor Sit Amet.",
+          }
+        
+        ],
+      },
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 @import "../../GlobalRules/scss/mainRules.scss";

@@ -20,24 +20,10 @@
 
       <div class="collapse navbar-collapse" id="">
         <ul class="navbar-nav ml-auto pr-0">
-          <li class="nav-item active">
-            <router-link class="nav-link" to="/">home </router-link>
+          <li class="nav-item active" v-for="(item, index) in navBarList" :key="index">
+            <router-link class="nav-link text-white" :to="item.to"> {{item.title}} </router-link>
           </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/about">about</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/serivces">serivces</router-link>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-scroll="quest" href="#">faq</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-scroll="pricing" href="#">pricing</a>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="our-team">team</router-link>
-          </li>
+
          
         </ul>
 
@@ -74,9 +60,6 @@
     font-size: 25px;
     font-weight: 600;
     letter-spacing: 2px;
-  }
-  .nav-link {
-    color: #222 !important;
   }
   .navbar-toggler {
     width: 47px;
@@ -171,14 +154,21 @@ window.$ = $;
 export default {
   data() {
     return {
-      
+      navBarList: [
+        {title: "Home", to:"/"},
+        {title: "About", to:"/about"},
+        {title: "Serivces", to:"/serivce"},
+        {title: "FAQ", to:"/Pricing"},
+        {title: "Team", to:"/our0team"}
+      ]
     };
   },
   mounted() {
-    $(".navbar-toggler").click(function () {
+    $(".navbar-toggler, .navbar .nav-link").click(function () {
       $(".collapse").toggleClass("apper");
     });
 
+    // when windows scroll
     $(window).scroll(function () {
       // console.log($(window).scrollTop())
       if ($(window).scrollTop() >= 100) {
@@ -188,16 +178,12 @@ export default {
       }
     });
 
+    // hidden navbar menu when click
     $(".navbar .collapse .fa-times, .navbar .nav-link").click(function () {
       $(".collapse").removeClass("apper");
     });
 
-    $(".navbar .nav-link").click(function () {
-      $("html, body").animate(
-        { scrollTop: $("#" + $(this).data("scroll")).offset().top },
-        1000
-      );
-    });
+    
   },
 };
 </script>

@@ -19,7 +19,7 @@
           <button class="btn btn-primary">read more</button>
         </div>
         <div class="col-lg-6">
-          <img src="../../assets/img/core-img/about-5.png" />
+          <img class="img-fluid" src="../../assets/img/core-img/about-5.png" />
         </div>
       </div>
     </div>
@@ -37,23 +37,21 @@
     height: 100vh !important;
     color: #fff;
     align-items: center;
-    padding-top: 125px;
     @include maxScreen(md) {
       div:first-child {
         justify-items: center;
       }
     }
-    & > div {
-      height: 80vh;
-    }
     h5 {
       color: #0cc8ed;
-      margin-bottom: 25px;
+      margin-bottom: 14px;
       span {
-        margin-top: 6px;
         height: 2px;
-        width: 120px;
-        background-color: var(--mainColor);
+        width: 35px;
+        margin-right:13px;
+        display:inline-block;
+        background-color: #fff;
+        margin-bottom:4px;
       }
     }
     h2 {
