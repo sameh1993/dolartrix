@@ -51,7 +51,8 @@
         margin-right:13px;
         display:inline-block;
         background-color: #fff;
-        margin-bottom:4px;
+        margin-bottom:5px;
+
       }
     }
     h2 {
