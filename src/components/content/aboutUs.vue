@@ -50,6 +50,16 @@
     border-radius: 54px;
     background-color: #fff;
     margin-top: 25px;
+    @include maxScreen(md) {
+      padding: 10px 20px;
+      .form-group {
+        height: 40px;
+        padding: 6px 8px !important;
+      }
+      .btn {
+        height: 40px !important;
+      }
+    }
 
     .form-group {
       border: 1px solid #a1a1a1;

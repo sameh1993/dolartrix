@@ -20,11 +20,15 @@
 
       <div class="collapse navbar-collapse" id="">
         <ul class="navbar-nav ml-auto pr-0">
-          <li class="nav-item active" v-for="(item, index) in navBarList" :key="index">
-            <router-link class="nav-link text-white" :to="item.to"> {{item.title}} </router-link>
+          <li
+            class="nav-item active"
+            v-for="(item, index) in navBarList"
+            :key="index"
+          >
+            <router-link class="nav-link text-white" :to="item.to">
+              {{ item.title }}
+            </router-link>
           </li>
-
-         
         </ul>
 
         <i class="fa fa-times" aria-hidden="true"></i>
@@ -40,23 +44,22 @@
 <style lang="scss" scoped>
 @import "../../GlobalRules/scss/mainRules.scss";
 
-.addColor {
-  background-color: var(--mainColor) !important;
-}
-
-.apper {
-  transform: translatex(0) !important;
-}
-
 .navbar {
   color: #fff;
   @include maxScreen(md) {
     background-color: #d7dfef !important;
+    .addColor {
+      background-color: var(--mainColor) !important;
+    }
+
+    .apper {
+      transform: translatex(0) !important;
+    }
   }
 
   .navbar-brand {
     text-transform: capitalize;
-    color: #222;
+    color: #fff;
     font-size: 25px;
     font-weight: 600;
     letter-spacing: 2px;
@@ -155,12 +158,12 @@ export default {
   data() {
     return {
       navBarList: [
-        {title: "Home", to:"/"},
-        {title: "About", to:"/about"},
-        {title: "Serivces", to:"/serivce"},
-        {title: "FAQ", to:"/Pricing"},
-        {title: "Team", to:"/our0team"}
-      ]
+        { title: "Home", to: "/" },
+        { title: "About", to: "/about" },
+        { title: "Serivces", to: "/serivce" },
+        { title: "FAQ", to: "/Pricing" },
+        { title: "Team", to: "/our0team" },
+      ],
     };
   },
   mounted() {
@@ -182,8 +185,6 @@ export default {
     $(".navbar .collapse .fa-times, .navbar .nav-link").click(function () {
       $(".collapse").removeClass("apper");
     });
-
-    
   },
 };
 </script>

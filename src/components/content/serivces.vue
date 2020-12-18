@@ -94,6 +94,7 @@
         <serivceitem
           :content="serivceSec.content"
         ></serivceitem>
+        
       </div>
     </div>
   </div>
@@ -127,7 +128,50 @@ export default {
   },
   data() {
     return {
-      
+      serivceSec: {
+        subTitle: "our serivces",
+        title: "What We Offer",
+        para:
+          "Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Sed Quis Accumsan Nisi Ut Ut Felis Congue Nisl Hendrerit Commodo.",
+        content: [
+          {
+            imgUrl: require('../../assets/img/icons/1.png'),
+            title: "Investment Advise",
+            para:
+              "Lorem Ipsum Dolor Sit Amet, Conse Ctetur Dolor Adipisicing Elit Ipsum Dolor Sit Amet.",
+          },
+          {
+            imgUrl: require('../../assets/img/icons/2.png'),
+            title: "Technica Support",
+            para:
+              "Lorem Ipsum Dolor Sit Amet, Conse Ctetur Dolor Adipisicing Elit Ipsum Dolor Sit Amet.",
+          },
+          {
+            imgUrl: require('../../assets/img/icons/3.png'),
+            title: "Marketing Base",
+            para:
+              "Lorem Ipsum Dolor Sit Amet, Conse Ctetur Dolor Adipisicing Elit Ipsum Dolor Sit Amet.",
+          },
+          {
+            imgUrl: require('../../assets/img/icons/4.png'),
+            title: "Wealth Management",
+            para:
+              "Lorem Ipsum Dolor Sit Amet, Conse Ctetur Dolor Adipisicing Elit Ipsum Dolor Sit Amet.",
+          },
+          {
+            imgUrl: require('../../assets/img/icons/5.png'),
+            title: "Financial Planning",
+            para:
+              "Lorem Ipsum Dolor Sit Amet, Conse Ctetur Dolor Adipisicing Elit Ipsum Dolor Sit Amet.",
+          },
+          {
+            imgUrl: require('../../assets/img/icons/6.png'),
+            title: "Consulting Services",
+            para:
+              "Lorem Ipsum Dolor Sit Amet, Conse Ctetur Dolor Adipisicing Elit Ipsum Dolor Sit Amet.",
+          },
+        ],
+      },
     };
   },
 };

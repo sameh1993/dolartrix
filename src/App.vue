@@ -1,8 +1,7 @@
 <template>
   <div class="root">
     <!-- start header -->
-
-    <header class="header">
+    <header :class="$route.name !== 'Home' ? 'h-50' : ''" class="header">
       <!-- start navigation bar -->
       <navbar />
       <!-- end navigation bar -->
@@ -10,6 +9,10 @@
       <!-- start slider -->
       <slider />
       <!-- end slider -->
+
+      <div v-if="$route.name !== 'Home'" class="bar">
+        <span> Home </span> |  <span> {{$route.name}} </span>
+      </div>
     </header>
 
     <!--end header -->
@@ -29,8 +32,22 @@
 @import "./GlobalRules/scss/mainRules.scss";
 
 .header {
-  min-height: 100vh;
   background-color: var(--mainColor);
+  height:100vh;
+  position: relative;
+
+  .bar {
+    position: absolute;
+    bottom: 0 ;
+    left:0;
+    right:0;
+    text-align: center;
+    color: #fff;
+    padding: 25px 0;
+    font-weight: 600;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+  }
 }
 
 .fa-angle-up {
@@ -85,6 +102,8 @@ export default {
       );
     });
 
+    console.log(this.$route.name)
+
     $(window).resize(function () {
       console.log($(window).width());
     });
@@ -95,7 +114,7 @@ export default {
   },
   data() {
     return {
-      view: "home",
+      view: "home"
     };
   },
   beforeMount() {
@@ -103,5 +122,6 @@ export default {
       $(this).remove();
     });
   },
+
 };
 </script>

@@ -5,7 +5,7 @@
       <!-- start section heading -->
       <div class="head">
         <h5>{{ ourTeam.subTitle }}</h5>
-        <h3>{{ ourTeam.title }}</h3>
+        <h3>{{ ourTeam.namePerson }}</h3>
         <p>
           {{ ourTeam.para }}
         </p>
@@ -50,17 +50,17 @@ export default {
           },
           {
             imgUrl: require("../../assets/img/team-img/member2.png"),
-            title: "Investment Advise",
+            namePerson: "Investment Advise",
             jobTitle: "Company CEO",
           },
           {
             imgUrl: require("../../assets/img/team-img/member3.png"),
-            title: "Investment Advise",
+            namePerson: "Investment Advise",
             jobTitle: "Company CEO",
           },
           {
             imgUrl: require("../../assets/img/team-img/member4.png"),
-            title: "Investment Advise",
+            namePerson: "Investment Advise",
             jobTitle: "Company CEO",
           },
         ],

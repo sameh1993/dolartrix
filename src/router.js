@@ -6,6 +6,7 @@ import Router from "vue-router";
 import HomePage from "./views/Home.vue";
 import aboutPage from "./views/about.vue";
 import serivcesPage from "./views/serivces.vue";
+import PricingPage from "./views/pricing.vue";
 import teamPage from "./views/our_team.vue";
 
 
@@ -22,18 +23,23 @@ export default new Router({
       component: HomePage
     },
     {
-      name: "about",
+      name: "About Us",
       path: "/about",
       component: aboutPage
     },
     {
-      name: "serivces",
-      path: "/serivces",
+      name: "Serivces",
+      path: "/serivce",
       component: serivcesPage
     },
     {
-      name: "Home",
-      path: "/our-team",
+      name: "pricing",
+      path: "/pricing",
+      component: PricingPage
+    },
+    {
+      name: "Our Team",
+      path: "/our0team",
       component: teamPage
     }
   ]

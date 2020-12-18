@@ -79,6 +79,7 @@ p {
   margin: 0;
 }
 
+
 p {
   text-transform: capitalize;
   line-height: 2;
@@ -132,32 +133,8 @@ section {
   }
 }
 
-form {
-  p {
-    font-size: 11px !important;
-    text-transform: capitalize;
-    color: #c1c1c1 !important;
-    line-height: 1.2px !important;
-    margin: 13px 0px;
-    margin-bottom: 15px;
-  }
-  input.error,
-  textarea.error {
-    background: #c3133b69;
-  }
 
-  input.valid,
-  textarea.valid {
-    background-color: #e8f0fe;
-  }
-  p.error {
-    color: #c3133b69;
-  }
-
-  p.valid {
-    color: #e8f0fe;
-  }
-}
+/* to smooth navigate for router-view */
 
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;

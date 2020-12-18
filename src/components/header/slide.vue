@@ -1,5 +1,5 @@
 <template>
-  <div class="slide">
+  <div v-if="$route.name === 'Home'" class="slide">
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
@@ -18,7 +18,7 @@
 
           <button class="btn btn-primary">read more</button>
         </div>
-        <div class="col-lg-6">
+        <div class="img col-lg-6">
           <img class="img-fluid" src="../../assets/img/core-img/about-5.png" />
         </div>
       </div>
@@ -36,10 +36,25 @@
     justify-content: center;
     height: 100vh !important;
     color: #fff;
-    align-items: center;
+    align-items: center !important;
     @include maxScreen(md) {
+      height:100vh !important;
+      padding-top: 45px;
       div:first-child {
         justify-items: center;
+        h5 {
+          font-size: 13px;
+        }
+        p{
+          margin: 10px 0; 
+        }
+        .btn {
+          font-size: 13px;
+          padding: 8px 25px;
+        }
+      }
+      img {
+        display:none
       }
     }
     h5 {
