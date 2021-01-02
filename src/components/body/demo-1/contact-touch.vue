@@ -1,7 +1,7 @@
 <template>
   <!-- ##### Contact Area Start ##### -->
   <div
-    class="contact_us_area section-padding-100-0 footer-area bg-img"
+    class="contact_us_area section-padding-100 footer-area bg-img"
     id="contact"
   >
     <div class="container">

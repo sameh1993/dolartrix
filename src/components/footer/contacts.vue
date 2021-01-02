@@ -1,6 +1,6 @@
 <template>
   <!-- ##### Footer Area Start ##### -->
-  <div class="footer-content-area">
+  <div class="footer-content-area section-padding-100">
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-4 col-md-6">

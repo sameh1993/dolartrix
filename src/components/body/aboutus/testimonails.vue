@@ -1,7 +1,7 @@
 <template>
   <!-- ##### Testimonial Area Start ##### -->
   <section
-    class="clients_testimonials_area bg-img section-padding-100-0"
+    class="clients_testimonials_area bg-img section-padding-100"
     id="test"
   >
     <div class="container">

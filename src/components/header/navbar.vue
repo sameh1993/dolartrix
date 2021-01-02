@@ -90,32 +90,32 @@
 
 .navbar {
   transition: all 0.5s ease-in;
-  @include maxScreen(lg) {
-    .collapse {
-      position: absolute;
-      top: 100%;
-      width: 100%;
-      padding: 0;
-      border-top: 2px solid var(--mainColor);
-      .nav-item {
-        text-align: center;
-        padding: 0;
-        .login-btn {
-          margin: 0 !important;
-        }
-        &:hover:not(:last-child) {
-          background: var(--mainColor);
-          .nav-link {
-            color: #fff;
-          }
-        }
-      }
-      button {
-        display: block;
-        margin: auto;
-      }
-    }
-  }
+  // @include maxScreen(lg) {
+  //   .collapse {
+  //     position: absolute;
+  //     top: 100%;
+  //     width: 100%;
+  //     padding: 0;
+  //     border-top: 2px solid var(--mainColor);
+  //     .nav-item {
+  //       text-align: center;
+  //       padding: 0;
+  //       .login-btn {
+  //         margin: 0 !important;
+  //       }
+  //       &:hover:not(:last-child) {
+  //         background: var(--mainColor);
+  //         .nav-link {
+  //           color: #fff;
+  //         }
+  //       }
+  //     }
+  //     button {
+  //       display: block;
+  //       margin: auto;
+  //     }
+  //   }
+  // }
 }
 .navbar-brand {
   color: #fff;

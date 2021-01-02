@@ -29,7 +29,7 @@
     </transition>
 
     <!-- start contacts us -->
-    <CommentsUs class="mt-0" v-if="$route.name != 'Home'"></CommentsUs>
+    <CommentsUs v-if="$route.name != 'Home'"></CommentsUs>
 
      <!-- ##### Footer Area Start ##### -->
     <footer v-if="$route.name == 'Home' " class="copy-rights mb-3 pt-2">
@@ -87,6 +87,12 @@ export default {
       } else {
         $(".navbar").removeClass("shrink")
       }
+    })
+
+    $("#scrollUp").click(function () {
+      $("html, body").animate({
+        scrollTop: 0
+      }, 1000)
     })
   },
   beforeMount() {
