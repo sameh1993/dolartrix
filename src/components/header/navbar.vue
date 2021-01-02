@@ -1,191 +1,254 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-    <div class="container">
-      <router-link class="navbar-brand" to="#">
-        <img src="../../assets/img/core-img/logo.png" /> testice
+  <!-- ##### Header Area Start ##### -->
+  <nav
+    class="navbar navbar-expand-lg p-relative navbar-white fixed-top"
+    id="banner"
+  >
+    <div class="container relative">
+      <!-- Brand -->
+      <router-link class="navbar-brand" to="/"
+        ><span> <img src="@/assets/img/core-img/logo.png" alt="logo" /></span>
+        Dolatrix
       </router-link>
+
+      <!-- Toggler/collapsibe Button -->
       <button
         class="navbar-toggler"
         type="button"
         data-toggle="collapse"
-        data-target="#"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="navigation"
+        data-target="#collapsibleNavbar"
       >
-        <span class="span"></span>
-        <span class="span"></span>
-        <span class="span"></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="">
-        <ul class="navbar-nav ml-auto pr-0">
-          <li
-            class="nav-item active"
-            v-for="(item, index) in navBarList"
-            :key="index"
-          >
-            <router-link class="nav-link text-white" :to="item.to">
-              {{ item.title }}
-            </router-link>
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <span
+              class="nav-link dropdown-toggle"
+              id="navbardrop"
+              data-toggle="dropdown"
+              >Home</span
+            >
+            <div class="dropdown-menu">
+              <router-link class="dropdown-item" to="index-demo-1"
+                >Home style 1</router-link
+              >
+              <router-link class="dropdown-item" to="index-demo-2"
+                >Home style 2</router-link
+              >
+              <router-link class="dropdown-item" to="index-demo-3"
+                >Home style 3</router-link
+              >
+            </div>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link active" to="/about-us">About Us</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/services">Services</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/faq">FAQ</router-link>
+          </li>
+          <li class="nav-item dropdown">
+            <span
+              class="nav-link dropdown-toggle"
+              id="navbardrop"
+              data-toggle="dropdown"
+              >Blog</span
+            >
+            <div class="dropdown-menu">
+              <router-link class="dropdown-item" to="/blog-posts"
+                >Blog Posts</router-link
+              >
+              <router-link class="dropdown-item" to="/slidebar-blog"
+                >Sidebar Blog
+              </router-link>
+              <router-link class="dropdown-item" to="/blog-details"
+                >Blog Details</router-link
+              >
+            </div>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/contact-us">Contact</router-link>
+          </li>
+          <li class="lh-55px nav-item pt-0 pb-0">
+            <router-link to="#" class="btn login-btn">Login!</router-link>
           </li>
         </ul>
-
-        <i class="fa fa-times" aria-hidden="true"></i>
-
-        <button class="text-uppercase btn btn-outline-success my-2 my-sm-0">
-          free try
-        </button>
       </div>
     </div>
   </nav>
+  <!-- ##### Header Area End ##### -->
 </template>
 
 <style lang="scss" scoped>
-@import "../../GlobalRules/scss/mainRules.scss";
+@import "@/assets/_Rules.scss";
+/* ##### 2.0 Header Area CSS ##### */
 
 .navbar {
-  color: #fff;
-  @include maxScreen(md) {
-    background-color: #d7dfef !important;
-    .addColor {
-      background-color: var(--mainColor) !important;
-    }
-
-    .apper {
-      transform: translatex(0) !important;
-    }
-  }
-
-  .navbar-brand {
-    text-transform: capitalize;
-    color: #fff;
-    font-size: 25px;
-    font-weight: 600;
-    letter-spacing: 2px;
-  }
-  .navbar-toggler {
-    width: 47px;
-    height: 32px;
-    outline: 0;
-    padding: 5px;
-    padding-top: 7px;
-
-    span {
+  transition: all 0.5s ease-in;
+  @include maxScreen(lg) {
+    .collapse {
+      position: absolute;
+      top: 100%;
       width: 100%;
-      height: 2px;
-      background: #222;
-      display: block;
-      margin-bottom: 8px;
-      transform: scale(1.2);
-    }
-  }
-  .collapse {
-    .fa-times {
-      display: none;
-    }
-
-    @include maxScreen(md) {
-      position: fixed;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      border-right: 1px solid #fff;
       padding: 0;
-      padding-top: 59px;
-      background-color: #192a56;
-      transform: translatex(-298px);
-      transition-duration: 1s;
-      display: block;
-      .fa-times {
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 20px;
-        font-size: 24px;
-        font-weight: 300;
-      }
-      .nav-link {
-        padding: 10px;
-        width: 290px;
-        padding-left: 25px;
-        border-bottom: 1px dotted #ccc;
-        color: #222;
-      }
-      .btn {
-        margin-top: 20px !important;
-        margin-left: 20px !important;
-      }
-    }
-    .navbar-nav {
-      padding-right: 10px;
+      border-top: 2px solid var(--mainColor);
       .nav-item {
-        padding: 0 4px;
-        .nav-link {
-          text-transform: uppercase;
-          font-size: 14px;
-          color: #fff;
-          letter-spacing: 1px;
-          font-weight: 600;
+        text-align: center;
+        padding: 0;
+        .login-btn {
+          margin: 0 !important;
+        }
+        &:hover:not(:last-child) {
+          background: var(--mainColor);
+          .nav-link {
+            color: #fff;
+          }
         }
       }
-    }
-    .btn {
-      background-color: rgb(253, 138, 54);
-      width: 120px;
-      border: 0;
-      &:hover {
-        background: var(--mainColor);
+      button {
+        display: block;
+        margin: auto;
       }
     }
   }
+}
+.navbar-brand {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+.lh-55px {
+  line-height: 55px;
+}
+.navbar-nav .nav-item .nav-link {
+  padding: 20px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #fff;
+}
+.navbar-nav .nav-item .nav-link:hover {
+  color: #fed136;
+}
+.navbar-expand-md .navbar-nav .dropdown-menu {
+  border-top: 3px solid #fed136;
+}
+.dropdown-item:hover {
+  background-color: #fed136;
+  color: #fff;
+}
+nav {
+  -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+  -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
+  transition: padding-top 0.3s, padding-bottom 0.3s;
+  border: none;
+}
 
-  .btn-outline-success {
-    background-color: rgb(253, 138, 54);
-    color: #fff;
-    border: 1px solid #fff;
-    font-weight: 600;
+.shrink {
+  animation: 0.3s ease-in-out;
+  animation-name: fadeInDown;
+  background-color: rgb(215, 223, 239);
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
   }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.navbar-white .navbar-brand:hover {
+  color: #fff;
+}
+.navbar-dark .navbar-brand:hover {
+  color: #333;
+}
+
+/* mobile view */
+@media (max-width: 500px) {
+  .navbar {
+    background: rgb(215, 223, 239);
+  }
+  .navbar-nav {
+    border-top: 1px solid #fed136;
+    color: #fff;
+    z-index: 1;
+    margin-top: 5px;
+  }
+  .navbar-nav .nav-item .nav-link {
+    padding: 0.7em 1em !important;
+    font-size: 100%;
+    font-weight: 500;
+  }
+}
+.navbar-dark .navbar-toggler,
+.navbar-white .navbar-toggler,
+.navbar-cyan .navbar-toggler {
+  background: #086bfe;
+  border-color: #333;
+}
+.navbar-white .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+@media (max-width: 992px) {
+  .shrink {
+    animation: none;
+  }
+  .login-btn {
+    margin-left: 15px !important;
+    margin-top: 15px !important;
+  }
+  .navbar-collapse .navbar-nav .nav-item .nav-link {
+    padding: 5px 12px;
+    color: #333;
+  }
+  .navbar-expand-lg.navbar-dark {
+    background: rgb(215, 223, 239);
+  }
+  .navbar-collapse {
+    padding-top: 20px;
+    background: rgb(215, 223, 239);
+  }
+}
+.navbar-white.shrink .navbar-brand,
+.shrink .navbar-nav .nav-item .nav-link {
+  color: #333;
+}
+
+.navbar-dark .navbar-brand,
+.navbar-dark .navbar-nav .nav-item .nav-link {
+  color: #333;
+}
+
+.navbar-cyan .navbar-brand,
+.navbar-cyan .navbar-nav .nav-item .nav-link {
+  color: #04d0ff;
 }
 </style>
 
 <script>
-global.jQuery = require("jquery");
-var $ = global.jQuery;
+const $ = require("jquery");
 window.$ = $;
 
 export default {
-  data() {
-    return {
-      navBarList: [
-        { title: "Home", to: "/" },
-        { title: "About", to: "/about" },
-        { title: "Serivces", to: "/serivce" },
-        { title: "FAQ", to: "/Pricing" },
-        { title: "Team", to: "/our0team" },
-      ],
-    };
-  },
   mounted() {
-    $(".navbar-toggler, .navbar .nav-link").click(function () {
-      $(".collapse").toggleClass("apper");
-    });
-
-    // when windows scroll
-    $(window).scroll(function () {
-      // console.log($(window).scrollTop())
-      if ($(window).scrollTop() >= 100) {
-        $(".navbar").css("background-color", "#d7dfef");
-      } else {
-        $(".navbar").css("background-color", "transparent");
-      }
-    });
-
-    // hidden navbar menu when click
-    $(".navbar .collapse .fa-times, .navbar .nav-link").click(function () {
-      $(".collapse").removeClass("apper");
+    $(".collapse a").click(function () {
+      $(".collapse").removeClass("show");
     });
   },
 };
 </script>
-

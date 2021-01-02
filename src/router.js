@@ -1,17 +1,25 @@
 import Vue from "vue";
 import Router from "vue-router";
 
-
-// import HomePage
-import HomePage from "./views/Home.vue";
-import aboutPage from "./views/about.vue";
-import serivcesPage from "./views/serivces.vue";
-import PricingPage from "./views/pricing.vue";
-import teamPage from "./views/our_team.vue";
-
-
-
 Vue.use(Router);
+
+// import Main Components
+import HomeComponent from "./views/Home.vue";
+// demos
+import DemoOneComponent from "./views/demos/index-demo-1.vue";
+import DemoTwoComponent from "./views/demos/index-demo-2.vue";
+import DemoThreeComponent from "./views/demos/index-demo-3.vue";
+
+import AboutComponent from "@/views/about-us.vue";
+import SerivcesCompoenent from "./views/serivces.vue";
+import FAQComponent from "./views/FAQ.vue";
+
+// blog pages
+import BlogPosts from "./views/blog/blog-posts.vue";
+import SlidebarBlog from "./views/blog/slidebar-blog.vue";
+import BlogDetails from "./views/blog/blog-details.vue";
+
+import contactUs from "./views/contactUs.vue";
 
 export default new Router({
   mode: "history",
@@ -20,27 +28,60 @@ export default new Router({
     {
       name: "Home",
       path: "/",
-      component: HomePage
+      component: HomeComponent,
+    },
+    {
+      name: "demo-1",
+      path: "/index-demo-1",
+      component: DemoOneComponent,
+    },
+    {
+      name: "demo-2",
+      path: "/index-demo-2",
+      component: DemoTwoComponent,
+    },
+    {
+      name: "demo-3",
+      path: "/index-demo-3",
+      component: DemoThreeComponent,
     },
     {
       name: "About Us",
-      path: "/about",
-      component: aboutPage
+      path: "/about-us",
+      component: AboutComponent,
     },
     {
+      path: "/services",
       name: "Serivces",
-      path: "/serivce",
-      component: serivcesPage
+      component: SerivcesCompoenent,
     },
     {
-      name: "pricing",
-      path: "/pricing",
-      component: PricingPage
+      name: "FAQ",
+      path: "/FAQ",
+      component: FAQComponent,
+    },
+    // blog pages
+    {
+      name: "Blog Posts", // first page for blog
+      path: "/blog-posts",
+      component: BlogPosts,
+    },
+
+    {
+      name: "Slidebar Blog", // secong page for blog
+      path: "/slidebar-blog",
+      component: SlidebarBlog,
+    },
+
+    {
+      name: "Blog Details", // three page for blog
+      path: "/blog-details",
+      component: BlogDetails,
     },
     {
-      name: "Our Team",
-      path: "/our0team",
-      component: teamPage
-    }
-  ]
+      name: "Contact Us",
+      path: "/contact-us",
+      component: contactUs,
+    },
+  ],
 });
