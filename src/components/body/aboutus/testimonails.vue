@@ -267,27 +267,6 @@ export default {
       ],
     };
   },
-  mounted() {
-    // :: Carousel Active Code
-    // if ($.fn.owlCarousel) {
-    //   $(".client_slides").owlCarousel({
-    //     responsive: {
-    //       0: {
-    //         items: 1,
-    //       },
-    //       991: {
-    //         items: 2,
-    //       },
-    //       767: {
-    //         items: 1,
-    //       },
-    //     },
-    //     loop: true,
-    //     autoplay: true,
-    //     smartSpeed: 700,
-    //     dots: true,
-    //   });
-    // }
-  },
+  mounted() {},
 };
 </script>

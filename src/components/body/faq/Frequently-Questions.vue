@@ -66,7 +66,7 @@
                     aria-expanded="false"
                     aria-controls="collapseTwo"
                   >
-                  - We are always carefull to Our Clients and service
+                    - We are always carefull to Our Clients and service
                   </button>
                 </h5>
               </div>
@@ -94,7 +94,7 @@
                     aria-expanded="false"
                     aria-controls="collapseThree"
                   >
-                  - We are always carefull to Our Clients and service
+                    - We are always carefull to Our Clients and service
                   </button>
                 </h5>
               </div>
@@ -164,7 +164,7 @@
         width: 100%;
         text-decoration: none;
         text-align: left;
-        text-transform:capitalize;
+        text-transform: capitalize;
       }
     }
     .card-body {
