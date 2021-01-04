@@ -44,7 +44,9 @@
             </div>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link active" to="/about-us">About Us</router-link>
+            <router-link class="nav-link active" to="/about-us"
+              >About Us</router-link
+            >
           </li>
           <li class="nav-item">
             <router-link class="nav-link" to="/services">Services</router-link>
@@ -90,6 +92,9 @@
 
 .navbar {
   transition: all 0.5s ease-in;
+  .nav-link {
+    cursor: pointer;
+  }
   // @include maxScreen(lg) {
   //   .collapse {
   //     position: absolute;
@@ -98,11 +103,7 @@
   //     padding: 0;
   //     border-top: 2px solid var(--mainColor);
   //     .nav-item {
-  //       text-align: center;
   //       padding: 0;
-  //       .login-btn {
-  //         margin: 0 !important;
-  //       }
   //       &:hover:not(:last-child) {
   //         background: var(--mainColor);
   //         .nav-link {

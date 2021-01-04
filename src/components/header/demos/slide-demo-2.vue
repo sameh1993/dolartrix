@@ -55,3 +55,11 @@
   </section>
   <!-- ##### Welcome Area End ##### -->
 </template>
+
+<style lang="scss" scoped>
+.more-btn-group {
+  a {
+    margin-top: 20px !important;
+  }
+}
+</style>

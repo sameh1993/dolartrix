@@ -47,6 +47,13 @@
   </section>
 </template>
 
+<style scoped>
+.our_services_area .section-heading p {
+  color: #ccc;
+}
+</style>
+
+
 <script>
 export default {
   data() {

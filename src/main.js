@@ -5,27 +5,25 @@ import store from "./store";
 
 Vue.config.productionTip = false;
 
+// import jquery library as globally
 window.$ = window.jQuery = require("jquery");
 
 // include font-awesome
 import "../node_modules/font-awesome/css/font-awesome.min.css";
 
 // import vue minified
-import "./../node_modules/vue/dist/vue.runtime.common.prod";
+import "./../node_modules/vue/dist/vue.common.prod";
 
 // import global css files
 import "./assets/css/responsive.css";
 import "./assets/css/style.css";
 
-Vue.use({
-  install: function (Vue) {
-    Vue.prototype.$jQuery = require("jquery"); // you'll have this.$jQuery anywhere in your vue project
-  },
-});
-
+// to include bootstrap  files globally
+import "bootstrap";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
 
+// include animate library
 import "@/assets/css/animate.css";
 
 new Vue({

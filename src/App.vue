@@ -41,6 +41,8 @@
 
 
 
+
+
   </div>
 </template>
 
@@ -50,6 +52,7 @@ header {
   background-color: var(--mainColor);
   transition: all 1s !important;
 }
+
 </style>
 
 <script>
@@ -84,8 +87,10 @@ export default {
     $(window).scroll(function () {
       if($(window).scrollTop() >= 100) {
         $(".navbar").addClass("shrink")
+        $("#scrollUp").fadeIn(800)
       } else {
         $(".navbar").removeClass("shrink")
+        $("#scrollUp").fadeOut(800)
       }
     })
 
@@ -94,6 +99,8 @@ export default {
         scrollTop: 0
       }, 1000)
     })
+
+    
   },
   beforeMount() {
     $("#preloader").delay(1000).fadeOut(700, function () {
