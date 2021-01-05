@@ -24,7 +24,7 @@
         data-wow-delay="0.4s"
       >
         <div class="dont-miss-post-thumb">
-          <img src="img/blog-img/1.jpg" alt="" />
+          <img src="@/assets/img/blog-img/1.jpg" alt="" />
         </div>
         <div class="dont-miss-post-content">
           <a href="#">EU council reunites</a>
@@ -37,7 +37,7 @@
         data-wow-delay="0.5s"
       >
         <div class="dont-miss-post-thumb">
-          <img src="img/blog-img/2.jpg" alt="" />
+          <img src="@/assets/img/blog-img/2.jpg" alt="" />
         </div>
         <div class="dont-miss-post-content">
           <a href="#">A new way to travel the world</a>
@@ -47,7 +47,7 @@
       <!-- Single Don't Miss Post -->
       <div class="single-dont-miss-post wow fadeInUp" data-wow-delay="0.6s">
         <div class="dont-miss-post-thumb">
-          <img src="img/blog-img/3.jpg" alt="" />
+          <img src="@/assets/img/blog-img/3.jpg" alt="" />
         </div>
         <div class="dont-miss-post-content">
           <a href="#">Why choose a bank?</a>

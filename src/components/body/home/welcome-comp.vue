@@ -21,8 +21,8 @@
               ><img :src="item.img" alt="demo" class="img-fluid"
             /></router-link>
             <div class="preview-btn-wrapper text-center">
-              <router-link :to="item.to" class="preview-demo" target="_blank"
-                >View demo<i class="fa fa-long-arrow-right"></i
+              <router-link :to="item.to" class="preview-demo" target="_blank">
+                View demo <i class="fa fa-long-arrow-right"></i
               ></router-link>
             </div>
           </div>

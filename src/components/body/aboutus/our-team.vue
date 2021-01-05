@@ -47,6 +47,11 @@
     </div>
   </section>
 </template>
+<style scoped>
+.single-team-member p {
+  color: #ccc;
+}
+</style>
 
 <script>
 export default {

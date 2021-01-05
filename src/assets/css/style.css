@@ -69,6 +69,10 @@
   --mainColor: #4d39c8;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   background: #4834d4;
@@ -668,7 +672,6 @@ section .more-dots span {
   font-size: 30px;
   text-transform: capitalize;
   margin-bottom: 15px;
-  color: #13287e !important;
 }
 
 .section-heading > p {
@@ -7264,7 +7267,7 @@ body.light-version {
 }
 
 .light-version p {
-  color: #888;
+  color: #b6b6b6;
 }
 
 .light-version h2,

@@ -12,7 +12,7 @@ window.$ = window.jQuery = require("jquery");
 import "../node_modules/font-awesome/css/font-awesome.min.css";
 
 // import vue minified
-import "./../node_modules/vue/dist/vue.common.prod";
+import "../node_modules/vue/dist/vue.min";
 
 // import global css files
 import "./assets/css/responsive.css";

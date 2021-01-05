@@ -57,6 +57,13 @@
   </section>
 </template>
 
+<style >
+a {
+  text-decoration: none;
+}
+</style>
+
+
 <script>
 export default {
   data() {

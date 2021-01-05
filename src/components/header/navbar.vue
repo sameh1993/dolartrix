@@ -96,6 +96,15 @@
     cursor: pointer;
   }
   // @include maxScreen(lg) {
+  //   .navbar-collapse {
+  //     position: absolute;
+  //     top: 100%;
+  //     left: 0;
+  //     right: 0;
+  //     padding: 0;
+  //   }
+  // }
+  // @include maxScreen(lg) {
   //   .collapse {
   //     position: absolute;
   //     top: 100%;
@@ -242,9 +251,6 @@ nav {
 </style>
 
 <script>
-const $ = require("jquery");
-window.$ = $;
-
 export default {
   mounted() {
     $(".collapse a").click(function () {
