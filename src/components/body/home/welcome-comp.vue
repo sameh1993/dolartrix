@@ -17,11 +17,11 @@
           :key="index"
         >
           <div class="demo-item">
-            <router-link :to="item.to" target="_blank"
+            <router-link :to="item.to"
               ><img :src="item.img" alt="demo" class="img-fluid"
             /></router-link>
             <div class="preview-btn-wrapper text-center">
-              <router-link :to="item.to" class="preview-demo" target="_blank">
+              <router-link :to="item.to" class="preview-demo">
                 View demo <i class="fa fa-long-arrow-right"></i
               ></router-link>
             </div>
