@@ -12,7 +12,7 @@
         >
           <span class="gradient-text blue">Our Services</span>
         </div>
-        <h3 class="wow fadeInUp w-text" data-wow-delay="0.3s">
+        <h3 class="wow fadeInUp" data-wow-delay="0.3s">
           What we speciaized in
         </h3>
         <p class="wow fadeInUp" data-wow-delay="0.4s">

@@ -44,7 +44,7 @@
                 class="more-btn-group animated wow fadeInUp"
                 data-wow-delay="1s"
               >
-                <a href="#" class="btn more-btn mr-3">contact us</a>
+                <a href="#" class="btn more-btn">contact us</a>
                 <a href="#" class="btn more-btn"> Learn more</a>
               </div>
             </div>
@@ -56,10 +56,14 @@
   <!-- ##### Welcome Area End ##### -->
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .more-btn-group {
   a {
     margin-top: 20px !important;
   }
+}
+.more-btn {
+  margin-left:5px;
+  margin-right: 5px;
 }
 </style>

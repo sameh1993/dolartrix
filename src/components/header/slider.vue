@@ -21,7 +21,7 @@
                 vel omnis voluptates.
               </p>
               <div class="more-btn-group wow fadeInUp" data-wow-delay="0.4s">
-                <a href="#" class="btn more-btn mr-3">Choose Demo</a>
+                <a href="#" class="btn more-btn">Choose Demo</a>
                 <a href="#" class="btn more-btn"> Purchase now</a>
               </div>
             </div>

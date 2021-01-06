@@ -22,7 +22,7 @@
                 vel omnis voluptates.
               </p>
               <div class="more-btn-group fadeInUp" data-wow-delay="0.4s">
-                <a href="#" class="btn more-btn mr-3">contact us</a>
+                <a href="#" class="btn more-btn">contact us</a>
                 <a href="#" class="btn more-btn"> Learn more</a>
               </div>
             </div>
