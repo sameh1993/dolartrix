@@ -99,7 +99,7 @@
                 </h5>
               </div>
               <div
-                id="collapseThree"
+                id="collapseFour"
                 class="collapse"
                 aria-labelledby="headingThree"
                 data-parent="#accordion"
@@ -113,23 +113,23 @@
             </div>
 
             <div class="card">
-              <div class="card-header" id="headingThree">
+              <div class="card-header" id="headingFour">
                 <h5 class="mb-0">
                   <button
                     class="btn btn-link collapsed"
                     data-toggle="collapse"
-                    data-target="#collapseThree"
+                    data-target="#collapseFour"
                     aria-expanded="false"
-                    aria-controls="collapseThree"
+                    aria-controls="collapseFour"
                   >
                     - how many Security sessions I need?
                   </button>
                 </h5>
               </div>
               <div
-                id="collapseThree"
+                id="collapseFour"
                 class="collapse"
-                aria-labelledby="headingThree"
+                aria-labelledby="headingFour"
                 data-parent="#accordion"
               >
                 <div class="card-body">

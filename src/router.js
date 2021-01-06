@@ -11,7 +11,7 @@ import DemoTwoComponent from "./views/demos/index-demo-2.vue";
 import DemoThreeComponent from "./views/demos/index-demo-3.vue";
 
 import AboutComponent from "@/views/about-us.vue";
-import SerivcesCompoenent from "./views/Serivces.vue";
+import SerivcesCompoenent from "./views/serivces.vue";
 import FAQComponent from "./views/FAQ.vue";
 
 // blog pages

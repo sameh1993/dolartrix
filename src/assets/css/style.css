@@ -918,6 +918,10 @@ section .more-dots span {
   margin-left: 15px;
 }
 
+.mainColor {
+  color: var(--mainColor);
+}
+
 .login-btn:hover,
 .login-btn:focus {
   color: #fff;
@@ -947,14 +951,14 @@ section .more-dots span {
     #21d397 0%,
     #7450fe 50%,
     #21d397 100%
-  );
+  ) !important;
   background-image: -webkit-linear-gradient(
     to right,
     #21d397 0%,
     #7450fe 50%,
     #21d397 100%
   );
-  -webkit-transition: all 500ms;
+  -webkit-transition: all 500ms !important;
   transition: all 500ms;
 }
 .more-btn:hover {
