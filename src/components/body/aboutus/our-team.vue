@@ -60,25 +60,25 @@ export default {
       ourTeamList: [
         {
           img: require("@/assets/img/team-img/1.png"),
-          name: "DR. Johan Wright",
+          name: "DR. JOMAN HELAL",
           jobTitle: "Head of Security",
           linkedIn: "#",
         },
         {
           img: require("@/assets/img/team-img/2.png"),
-          name: "DR. Johan Wright",
+          name: "DR. SLANS ALONS",
           jobTitle: "Head of Security",
           linkedIn: "#",
         },
         {
           img: require("@/assets/img/team-img/3.png"),
-          name: "DR. Johan Wright",
+          name: "DR. JOSHA MICHAL",
           jobTitle: "Head of Security",
           linkedIn: "#",
         },
         {
           img: require("@/assets/img/team-img/4.png"),
-          name: "DR. Johan Wright",
+          name: "DR. JOHAN WRIGHT",
           jobTitle: "Head of Security",
           linkedIn: "#",
         },
