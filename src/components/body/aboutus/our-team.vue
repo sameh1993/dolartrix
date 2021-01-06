@@ -33,7 +33,7 @@
               <img :src="item.img" class="center-block" alt="" />
             </div>
             <!-- Team Info -->
-            <div class="team-info">
+            <div class="team-infos">
               <h5 class="w-text">{{ item.name }}</h5>
               <p class="g-text">{{ item.jobTitle }}</p>
             </div>
@@ -50,6 +50,11 @@
 <style scoped>
 .single-team-member p {
   color: #ccc;
+}
+.team-infos {
+  background-color: var(--mainColor) !important;
+  padding: 20px 0 10px;
+  text-align: center;
 }
 </style>
 

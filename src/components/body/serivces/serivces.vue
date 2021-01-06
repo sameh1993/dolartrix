@@ -52,9 +52,9 @@
 </template>
 
 <style scoped>
-.our_services_area .section-heading p {
+/* .our_services_area .section-heading p {
   color: #ccc;
-}
+} */
 </style>
 
 
